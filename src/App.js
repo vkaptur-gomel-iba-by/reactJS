@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import Fcomponent from './Fcomponent';
-import FHcomponent from './FHcomponent';
+import CardComponent from './components/content/ComponentCard';
+import HeaderComponent from './components/header/ComponentHeader';
 
 function App() {
   return (
-    <div>
-      <FHcomponent></FHcomponent>
-      <Fcomponent></Fcomponent>
-        
-    </div>
+    <>
+      <HeaderComponent head={{text:'Your advertising could be here'}}/>
+      <CardComponent card={{caption:'Caption', text:'Some text'}}/> 
+    </>
   );
 }
 
