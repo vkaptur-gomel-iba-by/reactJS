@@ -1,0 +1,17 @@
+.header {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background-color: #1ef002;
+  border: 2px solid #d4d4d4;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #1ef002;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.text1 {
+  line-height: 50px;
+  font-family: sans-serif;
+  font-size: 50px;
+  color: ghostwhite;
+}

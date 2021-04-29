@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import CardComponent from './components/content/ComponentCard';
-import HeaderComponent from './components/header/ComponentHeader';
+import Card from './components/content/Card';
+import Header from './components/header/Header';
 
 function App() {
   return (
     <>
-      <HeaderComponent head={{text:'Your advertising could be here'}}/>
-      <CardComponent card={{caption:'Caption', text:'Some text'}}/> 
+      <Header text="Your advertising could be here" />
+      <Card
+        card={{
+          caption: 'Random text',
+          text: 'The European languages are members of the same family.',
+        }}
+      />
     </>
   );
 }
