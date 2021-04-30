@@ -1,0 +1,20 @@
+.card {
+  max-width: 300px;
+  margin-left: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 8px;
+  box-shadow: 0 0 15px #1ef002;
+}
+
+.caption {
+  line-height: 50px;
+  font-size: 30px;
+  color: gray;
+}
+
+.title {
+  color: grey;
+  font-size: 25px;
+  text-align: left;
+}
