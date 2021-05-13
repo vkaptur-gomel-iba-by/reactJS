@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
 import './Card.css';
+import classNames from 'classnames';
 
 const Card = props => {
-  const [style, setStyle] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const clickHandler = () => {
-    setStyle(!style);
+    setIsChecked(!isChecked);
   };
 
+  const twoClasses = classNames(
+    'card',
+    `card${isChecked ? '_highlighted' : '_default'}`,
+  );
   return (
-    <div className={`card${style.toString()}`}>
-      <input
-        type="checkbox"
-        className="checkbox"
-        id="checkbox"
-        onClick={clickHandler}
-      />
-      <label htmlFor="checkbox" />
-      <div className="caption">{props.card.caption}</div>
+    <div className={twoClasses}>
+      <div className="one_line">
+        <div className="caption">{props.card.caption}</div>
+        <input
+          type="checkbox"
+          className="checkbox"
+          id="checkbox"
+          onClick={clickHandler}
+        />
+        <label htmlFor="checkbox" />
+      </div>
       <hr />
       <p className="title">{props.card.text}</p>
     </div>
