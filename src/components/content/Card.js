@@ -8,13 +8,14 @@ const Card = props => {
     setIsChecked(!isChecked);
   };
 
-  const twoClasses = classNames(
-    'card',
-    `card${isChecked ? '_highlighted' : '_default'}`,
-  );
   return (
-    <div className={twoClasses}>
-      <div className="one_line">
+    <div
+      className={classNames(
+        'card',
+        `card${isChecked ? '_highlighted' : '_default'}`,
+      )}
+    >
+      <div className="header_container">
         <div className="caption">{props.card.caption}</div>
         <input
           type="checkbox"
