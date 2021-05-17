@@ -1,5 +1,5 @@
 .card {
-  max-width: 300px;
+  max-width: 333px;
   margin-left: 20px;
   text-align: left;
   font-family: sans-serif;
@@ -13,12 +13,33 @@
 }
 
 .caption {
+  max-width: 250px;
   line-height: 50px;
   font-size: 30px;
   color: gray;
 }
 
+.edit_icon {
+  position: relative;
+  margin-top: 14px;
+  padding: 0 0 0 60px;
+  cursor: pointer;
+}
+
+.save_icon {
+  position: relative;
+  margin-right: 5px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.cancel_icon {
+  position: relative;
+  margin-top: 1px;
+  cursor: pointer;
+}
 .title {
+  max-width: 300px;
   color: grey;
   font-size: 25px;
   text-align: left;
@@ -70,4 +91,8 @@
 .header_container {
   display: flex;
   justify-content: space-between;
+}
+
+.icon_container {
+  display: flex;
 }
