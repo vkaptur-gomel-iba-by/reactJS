@@ -9,8 +9,8 @@ function App() {
       <Header text="Your advertising could be here" />
       <Card
         card={{
-          caption: 'Random text',
-          text: 'The European languages are members of the same family.',
+          caption: 'Random text.',
+          text: 'Random title.',
         }}
       />
     </>

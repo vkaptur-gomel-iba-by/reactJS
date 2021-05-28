@@ -22,8 +22,15 @@ const Card = props => {
   };
 
   const saveHandler = () => {
-    const newCaption = document.getElementById('captionText').value;
-    const newTitle = document.getElementById('titleText').value;
+    let newCaption = document.getElementById('captionText').value;
+    let newTitle = document.getElementById('titleText').value;
+    if (newCaption === '') {
+      newCaption = properties.card.caption;
+    }
+
+    if (newTitle === '') {
+      newTitle = properties.card.text;
+    }
     const card = {
       card: {
         caption: newCaption,
@@ -35,62 +42,54 @@ const Card = props => {
   };
 
   return (
-    <div>
+    <div
+      className={classNames(
+        'card',
+        `card${isChecked ? '_highlighted' : '_default'}`,
+      )}
+    >
       {isEditable ? (
-        <div
-          className={classNames(
-            'card',
-            `card${isChecked ? '_highlighted' : '_default'}`,
-          )}
-        >
-          <div className="icon_container">
-            <input
-              className="caption"
-              id="captionText"
-              type="text"
-              placeholder="New caption"
-            />
-            <div className="save_icon">
-              <IoIosSave size="23px" onClick={saveHandler} />
-            </div>
-            <div className="cancel_icon">
-              <IoIosCloseCircleOutline size="23px" onClick={editHandler} />
-            </div>
-          </div>
-
-          <hr />
+        <div className="header_container">
           <input
-            className="title"
-            id="titleText"
+            className="caption"
+            id="captionText"
             type="text"
-            placeholder="New title"
+            placeholder={properties.card.caption}
           />
+          <div className="icon">
+            <IoIosSave size="23px" onClick={saveHandler} />
+          </div>
+          <div className="icon">
+            <IoIosCloseCircleOutline size="23px" onClick={editHandler} />
+          </div>
         </div>
       ) : (
-        <div
-          className={classNames(
-            'card',
-            `card${isChecked ? '_highlighted' : '_default'}`,
-          )}
-        >
-          <div className="header_container">
-            <div className="caption">{properties.card.caption}</div>
-            <div className="edit_icon">
-              <VscEdit size="23px" onClick={editHandler} />
-            </div>
-
-            <input
-              type="checkbox"
-              className="checkbox"
-              id="checkbox"
-              onClick={clickHandler}
-            />
-            <label htmlFor="checkbox" />
+        <div className="header_container">
+          <div className="caption">{properties.card.caption}</div>
+          <div className="edit_icon">
+            <VscEdit size="23px" onClick={editHandler} />
           </div>
 
-          <hr />
-          <p className="title">{properties.card.text}</p>
+          <input
+            type="checkbox"
+            className="checkbox"
+            id="checkbox"
+            onClick={clickHandler}
+          />
+          <label htmlFor="checkbox" />
         </div>
+      )}
+      <hr />
+      {isEditable ? (
+        <input
+          size="100px"
+          className="title"
+          id="titleText"
+          type="text"
+          placeholder={properties.card.text}
+        />
+      ) : (
+        <p className="title">{properties.card.text}</p>
       )}
     </div>
   );

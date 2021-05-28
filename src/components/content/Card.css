@@ -20,24 +20,17 @@
 }
 
 .edit_icon {
-  position: relative;
-  margin-top: 14px;
-  padding: 0 0 0 60px;
+  position: absolute;
+  margin-left: 230px;
+  margin-top: 13px;
   cursor: pointer;
 }
 
-.save_icon {
+.icon {
   position: relative;
-  margin-right: 5px;
-  margin-left: 25px;
   cursor: pointer;
 }
 
-.cancel_icon {
-  position: relative;
-  margin-top: 1px;
-  cursor: pointer;
-}
 .title {
   max-width: 300px;
   color: grey;
@@ -91,8 +84,4 @@
 .header_container {
   display: flex;
   justify-content: space-between;
-}
-
-.icon_container {
-  display: flex;
 }
