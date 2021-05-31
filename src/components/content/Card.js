@@ -68,17 +68,19 @@ const Card = props => {
       ) : (
         <div className="header_container">
           <div className="caption">{properties.card.caption}</div>
-          <div className="edit_icon">
-            <VscEdit size="23px" onClick={editHandler} />
-          </div>
+          <div className="buttons">
+            <div className="edit_icon">
+              <VscEdit size="23px" onClick={editHandler} />
+            </div>
 
-          <input
-            type="checkbox"
-            className="checkbox"
-            id="checkbox"
-            onClick={clickHandler}
-          />
-          <label htmlFor="checkbox" />
+            <input
+              type="checkbox"
+              className="checkbox"
+              id="checkbox"
+              onClick={clickHandler}
+            />
+            <label htmlFor="checkbox" />
+          </div>
         </div>
       )}
       <hr />

@@ -1,8 +1,9 @@
 .card {
-  max-width: 333px;
+  max-width: 340px;
   min-width: 323px;
   margin-left: 20px;
   text-align: left;
+  word-wrap: break-word;
   font-family: sans-serif;
   padding: 8px;
 }
@@ -21,15 +22,12 @@
 }
 
 .edit_icon {
-  position: absolute;
-  margin-left: 230px;
   margin-top: 13px;
   cursor: pointer;
 }
 
 .icon {
   cursor: pointer;
-  size: 100px;
 }
 
 .title {
