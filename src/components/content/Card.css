@@ -1,7 +1,9 @@
 .card {
-  max-width: 300px;
+  max-width: 340px;
+  min-width: 323px;
   margin-left: 20px;
   text-align: left;
+  word-wrap: break-word;
   font-family: sans-serif;
   padding: 8px;
 }
@@ -13,12 +15,23 @@
 }
 
 .caption {
+  max-width: 250px;
   line-height: 50px;
   font-size: 30px;
   color: gray;
 }
 
+.edit_icon {
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.icon {
+  cursor: pointer;
+}
+
 .title {
+  max-width: 300px;
   color: grey;
   font-size: 25px;
   text-align: left;
@@ -70,4 +83,9 @@
 .header_container {
   display: flex;
   justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  justify-content: right;
 }
