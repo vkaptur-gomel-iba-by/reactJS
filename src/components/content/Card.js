@@ -51,16 +51,18 @@ const Card = props => {
       {isEditable ? (
         <div className="header_container">
           <input
+            defaultValue={properties.card.caption}
             className="caption"
             id="captionText"
             type="text"
-            placeholder={properties.card.caption}
           />
-          <div className="icon">
-            <IoIosSave size="23px" onClick={saveHandler} />
-          </div>
-          <div className="icon">
-            <IoIosCloseCircleOutline size="23px" onClick={editHandler} />
+          <div className="buttons">
+            <div className="icon">
+              <IoIosSave size="23px" onClick={saveHandler} />
+            </div>
+            <div className="icon">
+              <IoIosCloseCircleOutline size="23px" onClick={editHandler} />
+            </div>
           </div>
         </div>
       ) : (
@@ -82,11 +84,11 @@ const Card = props => {
       <hr />
       {isEditable ? (
         <input
+          defaultValue={properties.card.text}
           size="100px"
           className="title"
           id="titleText"
           type="text"
-          placeholder={properties.card.text}
         />
       ) : (
         <p className="title">{properties.card.text}</p>

@@ -1,5 +1,6 @@
 .card {
   max-width: 333px;
+  min-width: 323px;
   margin-left: 20px;
   text-align: left;
   font-family: sans-serif;
@@ -27,8 +28,8 @@
 }
 
 .icon {
-  position: relative;
   cursor: pointer;
+  size: 100px;
 }
 
 .title {
@@ -84,4 +85,9 @@
 .header_container {
   display: flex;
   justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  justify-content: right;
 }
