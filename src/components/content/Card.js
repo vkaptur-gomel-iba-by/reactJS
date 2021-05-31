@@ -7,7 +7,10 @@ import { IoIosCloseCircleOutline, IoIosSave } from 'react-icons/io';
 
 import classNames from 'classnames';
 
+import { useSelector } from 'react-redux';
+
 const Card = props => {
+  const flag = useSelector(state => state.flag);
   const [properties, setProperties] = useState(props);
   const [isEditable, setIsEditable] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -69,17 +72,10 @@ const Card = props => {
         <div className="header_container">
           <div className="caption">{properties.card.caption}</div>
           <div className="buttons">
-            <div className="edit_icon">
+            <div className="edit_icon" style={{ display: flag ? 'none' : 'block' }}>
               <VscEdit size="23px" onClick={editHandler} />
             </div>
-
-            <input
-              type="checkbox"
-              className="checkbox"
-              id="checkbox"
-              onClick={clickHandler}
-            />
-            <label htmlFor="checkbox" />
+            <input type="checkbox" className="checkbox" onClick={clickHandler} />
           </div>
         </div>
       )}
