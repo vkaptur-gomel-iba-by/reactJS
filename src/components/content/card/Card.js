@@ -48,7 +48,7 @@ const Card = props => {
         `card${isChecked ? '_highlighted' : '_default'}`,
       )}
     >
-      {isEditable ? (
+      {isEditable && !props.card.flag ? (
         <div className="header_container">
           <input
             defaultValue={properties.card.caption}
@@ -80,7 +80,7 @@ const Card = props => {
         </div>
       )}
       <hr />
-      {isEditable ? (
+      {isEditable && !props.card.flag ? (
         <input
           defaultValue={properties.card.text}
           size="100px"

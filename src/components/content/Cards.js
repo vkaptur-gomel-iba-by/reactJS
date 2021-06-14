@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Card.css';
-import Card from './Card';
+import './Cards.css';
+import Card from './card';
 
 const Cards = props => {
   const [isViewOnly, setIsViewOnly] = useState(false);
@@ -15,19 +15,23 @@ const Cards = props => {
         className="view_checkbox"
         onClick={clickHandler}
       />
-      <label htmlFor="checkbox">View only</label>
-      {props.cards.map(e => {
-        return (
-          <Card
-            key={e.id}
-            card={{
-              caption: e.caption,
-              text: e.text,
-              flag: isViewOnly,
-            }}
-          />
-        );
-      })}
+      <label htmlFor="checkbox" style={{ position: 'absolute', marginTop: '20px' }}>
+        View only
+      </label>
+      <div>
+        {props.cards.map(element => {
+          return (
+            <Card
+              key={element.id}
+              card={{
+                caption: element.caption,
+                text: element.text,
+                flag: isViewOnly,
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
