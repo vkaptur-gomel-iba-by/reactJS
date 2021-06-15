@@ -14,9 +14,6 @@ const Card = props => {
   const [enteredCaption, setEnteredCaption] = useState('');
   const [enteredText, setEnteredText] = useState('');
 
-  console.log(props.card.flag);
-  console.log(isEditable);
-  console.log('-----------------------------');
   const clickHandler = () => {
     setIsChecked(!isChecked);
   };
@@ -33,12 +30,10 @@ const Card = props => {
   }
 
   const changeTextHandler = event => {
-    console.log(event.target.value);
     setEnteredText(event.target.value);
   };
 
   const changeCaptionHandler = event => {
-    console.log(event.target.value);
     setEnteredCaption(event.target.value);
   };
 
