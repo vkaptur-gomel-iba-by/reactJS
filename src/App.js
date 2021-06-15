@@ -14,10 +14,10 @@ const cards = [
 ];
 function App() {
   return (
-    <div>
+    <>
       <Header text="Your advertising could be here" />
       <Cards cards={cards} />
-    </div>
+    </>
   );
 }
 

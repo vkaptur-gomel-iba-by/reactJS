@@ -28,6 +28,12 @@
   cursor: pointer;
 }
 
+.edit_icon_hidden {
+  margin-top: 13px;
+  cursor: pointer;
+  display: none;
+}
+
 .icon {
   cursor: pointer;
 }
@@ -42,14 +48,6 @@
 .checkbox {
   margin-top: 8.5px;
   zoom: 1.7;
-  cursor: pointer;
-}
-
-.view_checkbox {
-  margin-top: 8.5px;
-  margin-left: 10px;
-  margin-bottom: 15px;
-  zoom: 2;
   cursor: pointer;
 }
 

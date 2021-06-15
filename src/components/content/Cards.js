@@ -8,14 +8,14 @@ const Cards = props => {
     setIsViewOnly(!isViewOnly);
   };
   return (
-    <div>
+    <>
       <input
         type="checkbox"
         id="checkbox"
         className="view_checkbox"
         onClick={clickHandler}
       />
-      <label htmlFor="checkbox" style={{ position: 'absolute', marginTop: '20px' }}>
+      <label htmlFor="checkbox" className="label_view_only">
         View only
       </label>
       <div>
@@ -32,7 +32,7 @@ const Cards = props => {
           );
         })}
       </div>
-    </div>
+    </>
   );
 };
 
