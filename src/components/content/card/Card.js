@@ -89,16 +89,11 @@ const Card = props => {
         <div className="header_container">
           <div className="caption">{properties.card.caption}</div>
           <div className="buttons">
-            {!props.card.flag ? (
+            {!props.card.flag && (
               <div className="edit_icon">
                 <VscEdit size="23px" onClick={editHandler} />
               </div>
-            ) : (
-              <div className="edit_icon_hidden">
-                <VscEdit size="23px" onClick={editHandler} />
-              </div>
             )}
-
             <input type="checkbox" className="checkbox" onClick={clickHandler} />
           </div>
         </div>
