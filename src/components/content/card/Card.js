@@ -11,9 +11,13 @@ const Card = props => {
   const [properties, setProperties] = useState(props);
   const [isEditable, setIsEditable] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [enteredCaption, setEnteredCaption] = useState('');
+  const [enteredText, setEnteredText] = useState('');
+
   const clickHandler = () => {
     setIsChecked(!isChecked);
   };
+
   const editHandler = () => {
     setIsEditable(!isEditable);
     if (isChecked) {
@@ -21,9 +25,22 @@ const Card = props => {
     }
   };
 
+  if (props.card.flag && isEditable) {
+    editHandler();
+  }
+
+  const changeTextHandler = event => {
+    setEnteredText(event.target.value);
+  };
+
+  const changeCaptionHandler = event => {
+    setEnteredCaption(event.target.value);
+  };
+
   const saveHandler = () => {
-    let newCaption = document.getElementById('captionText').value;
-    let newTitle = document.getElementById('titleText').value;
+    let newCaption = enteredCaption;
+    let newTitle = enteredText;
+
     if (newCaption === '') {
       newCaption = properties.card.caption;
     }
@@ -39,6 +56,8 @@ const Card = props => {
     };
     setProperties(card);
     editHandler();
+    setEnteredText('');
+    setEnteredCaption('');
   };
 
   return (
@@ -48,13 +67,14 @@ const Card = props => {
         `card${isChecked ? '_highlighted' : '_default'}`,
       )}
     >
-      {isEditable ? (
+      {isEditable && !props.card.flag ? (
         <div className="header_container">
           <input
             defaultValue={properties.card.caption}
             className="caption"
             id="captionText"
             type="text"
+            onChange={changeCaptionHandler}
           />
           <div className="buttons">
             <div className="icon">
@@ -69,28 +89,24 @@ const Card = props => {
         <div className="header_container">
           <div className="caption">{properties.card.caption}</div>
           <div className="buttons">
-            <div className="edit_icon">
-              <VscEdit size="23px" onClick={editHandler} />
-            </div>
-
-            <input
-              type="checkbox"
-              className="checkbox"
-              id="checkbox"
-              onClick={clickHandler}
-            />
-            <label htmlFor="checkbox" />
+            {!props.card.flag && (
+              <div className="edit_icon">
+                <VscEdit size="23px" onClick={editHandler} />
+              </div>
+            )}
+            <input type="checkbox" className="checkbox" onClick={clickHandler} />
           </div>
         </div>
       )}
       <hr />
-      {isEditable ? (
+      {isEditable && !props.card.flag ? (
         <input
           defaultValue={properties.card.text}
           size="100px"
           className="title"
           id="titleText"
           type="text"
+          onChange={changeTextHandler}
         />
       ) : (
         <p className="title">{properties.card.text}</p>
