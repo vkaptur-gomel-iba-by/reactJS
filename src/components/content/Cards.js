@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import './Cards.css';
 import Card from './card';
+import Checkbox from './Checkbox';
 
 const Cards = props => {
   const [isViewOnly, setIsViewOnly] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const clickHandler = () => {
+    setIsChecked(!isChecked);
     setIsViewOnly(!isViewOnly);
   };
   return (
     <>
-      <input
-        type="checkbox"
-        id="checkbox"
-        className="view_checkbox"
-        onClick={clickHandler}
-      />
-      <label htmlFor="checkbox" className="label_view_only">
-        View only
+      <label>
+        <Checkbox checked={isChecked} onChange={clickHandler} />
+        <span className="span">View only</span>
       </label>
       <div>
         {props.cards.map(element => {
